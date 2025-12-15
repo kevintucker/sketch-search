@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE/Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Runtime data and artifacts
+data/
+!data/reference_image.png
+
+# Environment/Secrets
+.env
+frontend/.env
+server/.env
+
+# Trae workspace
+.trae/
