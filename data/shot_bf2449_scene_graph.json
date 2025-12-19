@@ -1,0 +1,61 @@
+{
+  "characters": [
+    {
+      "identity": "primary_subject",
+      "appearance": {
+        "hair": "brown",
+        "age": "adult"
+      },
+      "pose": "standing",
+      "expression": "neutral",
+      "wardrobe": {
+        "top": "jacket",
+        "bottom": "jeans"
+      }
+    }
+  ],
+  "props": [
+    {
+      "name": "bag",
+      "placement": "right_hand",
+      "tags": [
+        "leather"
+      ]
+    }
+  ],
+  "environment": {
+    "location": "street",
+    "materials": [
+      "concrete",
+      "glass"
+    ],
+    "weather": "clear",
+    "time_of_day": "day"
+  },
+  "camera": {
+    "shot_type": "medium",
+    "focal_length": "50mm",
+    "angle": "eye_level",
+    "framing": "center",
+    "depth_of_field": "shallow"
+  },
+  "lighting": {
+    "key": "sun",
+    "fill": "ambient",
+    "rim": "none",
+    "direction": "front",
+    "softness": "hard",
+    "color_temperature": "5500K"
+  },
+  "mood_style": [
+    "cinematic",
+    "minimal"
+  ],
+  "constraints": {
+    "must_not_change": [
+      "face",
+      "wardrobe"
+    ]
+  },
+  "reference_image_path": "/Users/drkrypto/Documents/trae_projects/Sketch Search/data/shot_bf2449_normalized.png"
+}

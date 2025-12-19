@@ -1,0 +1,19 @@
+{
+  "shot_id": "shot_ae9675",
+  "duration_s": 7,
+  "camera_motion": [
+    "slow_dolly"
+  ],
+  "subject_motion": [
+    "blink"
+  ],
+  "background_motion": [
+    "parallax"
+  ],
+  "hard_constraints": [
+    "No character identity drift",
+    "No new objects",
+    "No wardrobe changes",
+    "No scene relighting"
+  ]
+}

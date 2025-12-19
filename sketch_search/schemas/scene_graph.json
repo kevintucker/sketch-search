@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SceneGraph",
+  "type": "object",
+  "properties": {
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identity": { "type": "string" },
+          "appearance": { "type": "object" },
+          "pose": { "type": "string" },
+          "expression": { "type": "string" },
+          "wardrobe": { "type": "object" }
+        },
+        "required": ["identity"]
+      }
+    },
+    "props": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "placement": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name"]
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "location": { "type": "string" },
+        "materials": { "type": "array", "items": { "type": "string" } },
+        "weather": { "type": "string" },
+        "time_of_day": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "shot_type": { "type": "string" },
+        "focal_length": { "type": "string" },
+        "angle": { "type": "string" },
+        "framing": { "type": "string" },
+        "depth_of_field": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "lighting": {
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "fill": { "type": "string" },
+        "rim": { "type": "string" },
+        "direction": { "type": "string" },
+        "softness": { "type": "string" },
+        "color_temperature": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "mood_style": { "type": "array", "items": { "type": "string" } },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "must_not_change": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "reference_image_path": { "type": "string" }
+  },
+  "additionalProperties": false
+}

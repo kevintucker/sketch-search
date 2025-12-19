@@ -1,0 +1,60 @@
+name: CI Validation
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate sample reference image
+        run: |
+          python - <<'PY'
+          import os
+          from PIL import Image
+          os.makedirs('data', exist_ok=True)
+          img = Image.new('RGB', (256, 256), (24, 24, 32))
+          img.save('data/reference_image.png')
+          print('Generated data/reference_image.png')
+          PY
+
+      - name: Start backend server
+        run: |
+          nohup python -m uvicorn server.main:app --host 0.0.0.0 --port 8001 &
+          echo $! > uvicorn.pid
+          sleep 5
+
+      - name: Run acceptance tests
+        run: |
+          python scripts/test_acceptance.py
+
+      - name: Run scene graph verification
+        run: |
+          python scripts/test_scene_graph_verify.py
+
+      - name: Run assistant endpoint test
+        run: |
+          python scripts/test_assistant.py
+
+      - name: Stop backend server
+        if: always()
+        run: |
+          kill $(cat uvicorn.pid) || true

@@ -1,0 +1,19 @@
+{
+  "shot_id": "shot_d3e19b",
+  "duration_s": 4,
+  "camera_motion": [
+    "slow_pan"
+  ],
+  "subject_motion": [
+    "blink"
+  ],
+  "background_motion": [
+    "parallax"
+  ],
+  "hard_constraints": [
+    "No character identity drift",
+    "No new objects",
+    "No wardrobe changes",
+    "No scene relighting"
+  ]
+}

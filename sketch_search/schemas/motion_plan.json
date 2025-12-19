@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MotionPlan",
+  "type": "object",
+  "properties": {
+    "shot_id": { "type": "string" },
+    "duration_s": { "type": "integer", "minimum": 1 },
+    "camera_motion": { "type": "array", "items": { "type": "string" } },
+    "subject_motion": { "type": "array", "items": { "type": "string" } },
+    "background_motion": { "type": "array", "items": { "type": "string" } },
+    "hard_constraints": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["shot_id", "duration_s"],
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "shot_id": "shot_6b6187",
+  "duration_s": 5,
+  "camera_motion": [
+    "slow_pan"
+  ],
+  "subject_motion": [
+    "head_turn"
+  ],
+  "background_motion": [
+    "parallax"
+  ],
+  "hard_constraints": [
+    "No character identity drift",
+    "No new objects",
+    "No wardrobe changes",
+    "No scene relighting"
+  ]
+}

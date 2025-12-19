@@ -1,0 +1,22 @@
+{
+  "shot_id": "shot_bcc34e",
+  "duration_s": 5,
+  "camera_motion": [
+    "slow_pan"
+  ],
+  "subject_motion": [
+    "blink"
+  ],
+  "background_motion": [
+    "parallax",
+    "particles",
+    "wind",
+    "water"
+  ],
+  "hard_constraints": [
+    "No character identity drift",
+    "No new objects",
+    "No wardrobe changes",
+    "No scene relighting"
+  ]
+}
