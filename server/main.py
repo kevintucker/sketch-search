@@ -33,6 +33,10 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 app.mount("/data", StaticFiles(directory=DATA_DIR), name="data")
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 @app.post("/api/upload")
 async def upload_image(file: UploadFile = File(...)):
